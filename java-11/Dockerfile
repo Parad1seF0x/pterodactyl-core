@@ -5,7 +5,7 @@ RUN printf "deb [arch=amd64] https://apt.bell-sw.com/ stable main" > /etc/apt/so
 RUN wget -q -O - https://download.bell-sw.com/pki/GPG-KEY-bellsoft | apt-key add - \
     && apt update -y \
     && apt upgrade -y \
-    && apt install bellsoft-java11 -y \
+    && apt install bellsoft-java11-full -y \
     && apt install -y openjfx curl ca-certificates openssl git tar bash sqlite fontconfig \
     && adduser -D -h /home/container container
 
