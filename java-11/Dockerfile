@@ -5,7 +5,7 @@ RUN printf "deb [arch=amd64] https://apt.bell-sw.com/ stable main" > /etc/apt/so
 RUN wget -q -O - https://download.bell-sw.com/pki/GPG-KEY-bellsoft | apt-key add - \
     && apt update -y \
     && apt upgrade -y \
-    && apt install lib32z1 \
+    && apt install lib32z1 -y \
     && apt install bellsoft-java11-full -y \
     && ln -s /usr/lib/jvm/bellsoft-java11-full-amd64/bin/java /usr/lib/jvm/default-java \
     && apt install -y openjfx curl ca-certificates openssl git tar bash sqlite fontconfig \
