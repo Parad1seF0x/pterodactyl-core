@@ -3,6 +3,7 @@ FROM openjdk:11-jdk-buster
 RUN printf "deb [arch=amd64] https://apt.bell-sw.com/ stable main" > /etc/apt/sources.list.d/bellsoft.list
 
 RUN wget -q -O - https://download.bell-sw.com/pki/GPG-KEY-bellsoft | apt-key add - \
+    && echo "deb [arch=amd64] https://apt.bell-sw.com/ stable main" | tee /etc/apt/sources.list.d/bellsoft.list \
     && apt update -y \
     && apt upgrade -y \
     && apt install lib32z1 -y \
