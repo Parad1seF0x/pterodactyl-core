@@ -28,7 +28,8 @@ jobs:
           file: java-11/Dockerfile
           context: ./java-11
           push: true
-          tags: pterodactyl-core:java-11
+          repository: alexeylesin/pterodactyl-core
+          tags: java-11
 
       - name: Build and push Docker image - Java 17
         uses: docker/build-push-action@v2
@@ -36,4 +37,5 @@ jobs:
           file: java-17/Dockerfile
           context: ./java-17
           push: true
-          tags: pterodactyl-core:java-17
+          repository: alexeylesin/pterodactyl-core
+          tags: java-17
