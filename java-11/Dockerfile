@@ -10,7 +10,7 @@ RUN wget -q -O - https://download.bell-sw.com/pki/GPG-KEY-bellsoft | apt-key add
     && apt install lib32z1 -y \
     && apt install bellsoft-java11-full -y \
     && ln -s /usr/lib/jvm/bellsoft-java11-full-amd64/bin/java /usr/lib/jvm/default-java \
-    && apt install -y openjfx curl ca-certificates openssl git tar bash sqlite fontconfig \
+    && apt install -y openjfx lib32z-dev curl ca-certificates openssl git tar bash sqlite fontconfig \
     && adduser -D -h /home/container container
 
 USER container
