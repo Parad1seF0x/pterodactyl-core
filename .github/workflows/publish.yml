@@ -20,7 +20,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: alexeylesin/pterodactyl-core
+          images: deathpleiad/pterodactyl-core
       
       - name: Build and push Docker image - Java 11
         uses: docker/build-push-action@v2
@@ -28,7 +28,7 @@ jobs:
           file: java-11/Dockerfile
           context: ./java-11
           push: true
-          tags: alexeylesin/pterodactyl-core:java-11
+          tags: deathpleiad/pterodactyl-core:java-11
 
       - name: Build and push Docker image - Java 17
         uses: docker/build-push-action@v2
@@ -36,4 +36,4 @@ jobs:
           file: java-17/Dockerfile
           context: ./java-17
           push: true
-          tags: alexeylesin/pterodactyl-core:java-17
+          tags: deathpleiad/pterodactyl-core:java-17
