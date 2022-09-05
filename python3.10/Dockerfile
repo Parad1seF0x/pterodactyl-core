@@ -3,7 +3,7 @@ FROM        --platform=$TARGETOS/$TARGETARCH python:3.10-slim
 LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 
 RUN         apt update \
-            && apt -y install git gcc g++ ca-certificates dnsutils curl iproute2 ffmpeg procps language-pack-ru \
+            && apt -y install git gcc g++ ca-certificates dnsutils curl iproute2 ffmpeg procps locales locales-all \
             && useradd -m -d /home/container container
 
 USER        container
