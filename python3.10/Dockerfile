@@ -6,10 +6,13 @@ RUN         apt update \
             && apt -y install git gcc g++ ca-certificates dnsutils curl iproute2 ffmpeg procps locales locales-all \
             && useradd -m -d /home/container container
 
+ENV         LANGUAGE=ru_RU.UTF-8 LC_ALL=ru_RU.UTF-8 LANG=ru_RU.UTF-8
+RUN         locale-gen ru_RU.UTF-8
+RUN         dpkg-reconfigure locales
+
 USER        container
 ENV         USER=container HOME=/home/container
 ENV         LANGUAGE=ru_RU.UTF-8 LC_ALL=ru_RU.UTF-8 LANG=ru_RU.UTF-8
-RUN         locale-gen ru_RU.UTF-8 && dpkg-reconfigure locales
 WORKDIR     /home/container
 
 COPY        ./../entrypoint.sh /entrypoint.sh
