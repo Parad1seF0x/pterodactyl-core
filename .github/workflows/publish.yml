@@ -37,3 +37,11 @@ jobs:
           context: ./java-17
           push: true
           tags: deathpleiad/pterodactyl-core:java-17
+          
+      - name: Build and push Docker image - Python3.10
+        uses: docker/build-push-action@v2
+        with:
+          file: python3.10/Dockerfile
+          context: ./python3.10
+          push: true
+          tags: deathpleiad/pterodactyl-core:python3.10
